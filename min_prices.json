@@ -1,0 +1,24 @@
+[
+    {
+        "name": "Borderlands 3",
+        "date": "2023-05-16 15:13:20.101769",
+        "appid": "397540",
+        "price_details": {
+            "initial_price": "Mex$ 899.00",
+            "final_price": "Mex$ 134.85",
+            "currency": "MXN",
+            "discount": "85 %"
+        }
+    },
+    {
+        "name": "Tiny Tina's Wonderlands",
+        "date": "2023-05-16 15:33:26.747584",
+        "appid": "1286680",
+        "price_details": {
+            "initial_price": "Mex$ 1,219.00",
+            "final_price": "Mex$ 609.50",
+            "currency": "MXN",
+            "discount": "50 %"
+        }
+    }
+]

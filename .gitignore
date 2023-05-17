@@ -1,0 +1,7 @@
+#ignore this files in github
+.env
+.cache
+.config
+.upm
+venv
+.replit
