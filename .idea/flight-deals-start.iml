@@ -1,7 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/.cache/replit/modules" />
+      <excludeFolder url="file://$MODULE_DIR$/.config/procps" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/include" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/aiohttp/.hash" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/cryptography/hazmat/bindings/_rust" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/debugpy/_vendored/pydevd/_pydevd_frame_eval/vendored/bytecode-0.13.0.dev0.dist-info" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/debugpy/_vendored/pydevd/pydevd_attach_to_process/windows" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/jedi/third_party" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/numpy.libs" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/numpy/core/include/numpy/libdivide" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/numpy/core/include/numpy/random" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/numpy/core/lib/npy-pkg-config" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/numpy/core/tests/data" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/numpy/distutils/mingw" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/numpy/f2py/src" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/numpy/f2py/tests/src/abstract_interface" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/numpy/f2py/tests/src/array_from_pyobj" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/numpy/f2py/tests/src/assumed_shape" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/numpy/f2py/tests/src/block_docstring" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/numpy/f2py/tests/src/callback" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/numpy/f2py/tests/src/cli" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/numpy/f2py/tests/src/common" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/numpy/f2py/tests/src/crackfortran" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/numpy/f2py/tests/src/kind" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/numpy/f2py/tests/src/mixed" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/numpy/f2py/tests/src/module_data" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/numpy/f2py/tests/src/negative_bounds" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/numpy/f2py/tests/src/parameter" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/numpy/f2py/tests/src/quoted_character" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/numpy/f2py/tests/src/regression" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/numpy/f2py/tests/src/return_character" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/numpy/f2py/tests/src/return_complex" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/numpy/f2py/tests/src/return_integer" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/numpy/f2py/tests/src/return_logical" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/numpy/f2py/tests/src/return_real" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/numpy/f2py/tests/src/size" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/numpy/f2py/tests/src/string" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/numpy/lib/tests/data" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/numpy/typing/tests/data/fail" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/numpy/typing/tests/data/misc" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/platformdirs-2.5.2.dist-info/license_files" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/poetry/_vendor" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/poetry/core/_vendor/jsonschema/schemas" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/poetry/core/_vendor/lark/grammars" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/poetry/core/json/schemas" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/poetry/core/spdx/data" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/poetry/json/schemas" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/pytoolconfig-1.2.2.dist-info/license_files" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.8/site-packages/werkzeug/debug/shared" />
+    </content>
     <orderEntry type="jdk" jdkName="Python 3.11 (venv) (2)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>

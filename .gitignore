@@ -5,3 +5,5 @@
 .upm
 venv
 .replit
+replit.nix
+replit_zip_error_log.txt
