@@ -1,8 +1,8 @@
-import json
 import requests
 import datetime as dt
 from dotenv import load_dotenv
 import os
+
 load_dotenv()
 
 
@@ -16,7 +16,11 @@ class DataManager:
             "https://api.sheety.co/d902c2d4b30f97095a96290aec50a74b/steamLowestPriceHistory/historico"
         self.TODAY = dt.datetime.today().strftime("%d-%b-%Y")
 
-    def game_post(self, id_game):
+    def get_history_list(self):
+        response = requests.get(url=self.sheety_endpoint, headers=self.sheety_headers)
+        return response.json()["historico"]
+
+    def create_game_entry(self, id_game):
         game_info = self.find_game(id_game)
         sheety_POST_params = {
             "historico": {
@@ -31,45 +35,51 @@ class DataManager:
             }
         }
         response = requests.post(url=self.sheety_endpoint, headers=self.sheety_headers, json=sheety_POST_params)
-        print(response.status_code)
+        if response.status_code == 200:
+            print("Adding new game")
+
+    def delete_game_entry(self, row_id):
+        delete_row = f"{self.sheety_endpoint}/{row_id}"
+        response = requests.delete(url=delete_row, headers=self.sheety_headers)
+        if response.status_code == 200:
+            print(f"Deleting game entry at row {row_id}")
+
+    def update_game_entry(self, row_id, final_price, discount):
+        sheety_PUT_params = {
+            "historico": {
+                "modifyDate": self.TODAY,
+                "finalPrice": final_price,
+                "discount": discount
+            }
+        }
+        update_game = f"{self.sheety_endpoint}/{row_id}"
+        response = requests.put(url=update_game, headers=self.sheety_headers, json=sheety_PUT_params)
+        if response.status_code == 200:
+            print("updated game successfully")
 
     def game_exists(self, id_game):
-        response = requests.get(url=self.sheety_endpoint, headers=self.sheety_headers)
-        history_list = response.json()["historico"]
+        history_list = self.get_history_list()
         for item in history_list:
             if id_game == str(item.get("appId")):
+                print("Game exists")
                 return True, item
 
-    def delete_game(self, id_game):
-        search = self.game_exists(id_game)
-        rowID = search[1].get("id")
-        delete_row = \
-            f"https://api.sheety.co/d902c2d4b30f97095a96290aec50a74b/steamLowestPriceHistory/historico/{rowID}"
-        delete = requests.delete(url=delete_row, headers=self.sheety_headers)
-
-    def update_game(self, id_game, row_id):
-        game_info = self.find_game(id_game)
-        list = self.game_exists(id_game)
-        modify_date = dt.datetime.strptime(list[1]["modifyDate"], "%d-%b-%Y")
-        if modify_date < dt.datetime.today() and list[1]["finalPrice"] > \
-                self.find_game(list[1]["appId"])["price_details"]["final_price"]:
-            sheety_PUT_params = {
-                "historico": {
-                    "modifyDate": self.TODAY,
-                    "finalPrice": game_info["price_details"]["final_price"],
-                    "discount": game_info["price_details"]["discount"]
-                }
-            }
-            update_game = \
-                f"https://api.sheety.co/d902c2d4b30f97095a96290aec50a74b/steamLowestPriceHistory/historico/{row_id}"
-            requests.put(url=update_game, headers=self.sheety_headers, json=sheety_PUT_params)
+    def update_entries(self):
+        history_list = self.get_history_list()
+        for item in history_list:
+            modify_date = dt.datetime.strptime(item["modifyDate"], "%d-%b-%Y")
+            if modify_date < dt.datetime.today() and item["finalPrice"] > \
+                    self.find_game(item["appId"])["price_details"]["final_price"]:
+                self.update_game_entry(item["id"], self.find_game(item["appId"])["price_details"]["final_price"],
+                                       self.find_game(item["appId"])["price_details"]["discount"])
+                print("entries updated")
 
     def history_discounts(self, id_game):
         exists = self.game_exists(id_game)
         if exists[0]:
-            self.update_game(id_game, exists[1].get("id"))
+            self.update_entries()
         else:
-            self.game_post(id_game)
+            self.create_game_entry(id_game)
 
     def find_game(self, id_game):
         steam_price_endpoint = f"http://store.steampowered.com/api/appdetails?appids={id_game}&cc=mx"
@@ -93,3 +103,4 @@ data_manager = DataManager()
 # data_manager.find_game(id_game="233290")
 data_manager.history_discounts(id_game="233290")
 # data_manager.delete_game(id_game="1243830")
+# data_manager.update_entries()
